@@ -1,0 +1,37 @@
+.login_container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 49% 51%;
+
+  .left {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000000;
+    background-color: #f3f5f7;
+    position: relative;
+
+    .hero_image {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .brand_name {
+      position: absolute;
+      margin-top: 2rem;
+      line-height: 1;
+      top: 0;
+    }
+  }
+  .right {
+    // max-width: 80%;
+    display: flex;
+    // align-items: center;
+  }
+}

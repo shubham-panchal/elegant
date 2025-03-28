@@ -1,0 +1,24 @@
+.product_cards_container {
+  max-width: max-content;
+  width: 16.375rem;
+}
+
+.swiper_slide {
+  width: max-content !important;
+}
+
+.progress_pagination {
+  padding-top: 3rem;
+  .progress_bar {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #e8ecef;
+
+    .fill {
+      width: 40%;
+      height: 100%;
+      background-color: #000000;
+      border-radius: inherit;
+    }
+  }
+}

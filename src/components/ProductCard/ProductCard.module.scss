@@ -1,0 +1,106 @@
+.product_card_component {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  flex-shrink: 0;
+
+  &:hover {
+    .product_body {
+      .wishlist_icon {
+        opacity: 1;
+        transition: all 0.7s ease-in-out;
+      }
+
+      .add_to_cart_cta {
+        transform: translateY(0%);
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .product_body {
+    position: relative;
+    overflow: hidden;
+
+    .new_tag {
+      position: absolute;
+      top: 1em;
+      left: 1em;
+      padding: 0.25rem 0.875rem;
+      border-radius: 0.25em;
+      background-color: #ffffff;
+      color: #000000;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .discount_tag {
+      position: absolute;
+      top: 3em;
+      left: 1em;
+      padding: 0.25rem 0.875rem;
+      font-weight: 600;
+      color: #ffffff;
+      background-color: #38cb89;
+      border-radius: 0.25em;
+    }
+
+    .wishlist_icon {
+      cursor: pointer;
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      box-shadow: 0 8px 16px -8px #0f0f0f;
+      padding: 0.375rem;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+    }
+
+    .add_to_cart_cta {
+      cursor: pointer;
+      position: absolute;
+      bottom: 1em;
+      left: 1em;
+      right: 1em;
+      padding: 0.625em 0;
+      border-radius: 0.25em;
+      background-color: #000000;
+      color: #ffffff;
+      text-align: center;
+      font-weight: 500;
+      line-height: 1.75em;
+      letter-spacing: -0.4px;
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    .addAnimation {
+      transition: padding 0.3s ease-in-out;
+      padding: 0.875em 0;
+    }
+  }
+
+  .product_details {
+    .product_name {
+      font-weight: 500;
+      line-height: 1.625em;
+    }
+    .price_block {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      line-height: 1.57em;
+
+      .strikethrough {
+        color: #6c7275;
+        text-decoration: line-through;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.navbar_container {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  padding: 1.285em 0;
+
+  .brand_logo {
+    height: 1.5rem;
+  }
+
+  .navlink_wrapper {
+    display: flex;
+    gap: 2.86em;
+    color: #6c7275;
+
+    .navlink {
+      cursor: pointer;
+    }
+  }
+  .active {
+    color: #000000;
+  }
+
+  .navicons_wrapper {
+    display: flex;
+    gap: 1.14em;
+
+    .navicon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.313rem;
+      cursor: pointer;
+
+      .icon {
+        width: 1.5rem;
+      }
+
+      .total_bag_items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 0.625rem;
+        padding: 0.313rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        min-width: 1.25rem;
+        background-color: #000000;
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+  }
+}
+.cart_container {
+  position: relative;
+}
