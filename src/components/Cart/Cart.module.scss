@@ -23,7 +23,7 @@
 
     .cart_items_wrapper {
       height: 100%;
-      overflow: scroll;
+      overflow: auto;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
