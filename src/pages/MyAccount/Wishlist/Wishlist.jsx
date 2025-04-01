@@ -10,6 +10,11 @@ const Wishlist = () => {
   const handleRemoveFromWishlist = (product) => {
     dispatch({ type: "REMOVE_FROM_WISHLIST", payload: product });
   };
+
+  const handleAddToCart = (product) => {
+    dispatch({ type: "ADD_TO_CART", payload: product });
+  };
+
   return (
     <div className={classes?.wishlist_component}>
       <div className={classes?.page_title}>Your Wishlist</div>
@@ -51,7 +56,12 @@ const Wishlist = () => {
                   </td>
                   <td>$ {item?.price}</td>
                   <td>
-                    <div className={classes?.add_cta}>Add to cart</div>
+                    <div
+                      className={classes?.add_cta}
+                      onClick={() => handleAddToCart(item)}
+                    >
+                      Add to cart
+                    </div>
                   </td>
                 </tr>
               ))}

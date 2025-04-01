@@ -5,6 +5,9 @@
   .hero_image_wrapper {
     position: relative;
     img {
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
       height: 24.5rem;
     }
     .overlay_container {
