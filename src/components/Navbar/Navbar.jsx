@@ -1,26 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import classes from "./Navbar.module.scss";
 import { icons } from "../../assets/imageKeyMapping";
 import Cart from "../Cart/Cart";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { CartActions } from "../../actions/CartActions";
 
 const Navbar = () => {
-  const [showCart, setShowCart] = useState(false);
   const [totalCartItems, setTotalCartItems] = useState(0);
-  const cart = useSelector((store) => store?.cart);
+  const cart = useSelector((store) => store?.cart?.cart);
+  const showCart = useSelector((store) => store?.cart?.openCart);
   const navigate = useNavigate();
   const location = useLocation();
   const [currentPage, setCurrentPage] = useState(
     location?.pathname?.split("/")[1]
   );
+  const dispatch = useDispatch();
+
+  useMemo(() => {
+    setCurrentPage(location?.pathname?.split("/")[1]);
+  }, [location?.pathname]);
 
   useEffect(() => {
     setTotalCartItems(cart?.length);
   }, [cart]);
 
   const toggleCart = () => {
-    setShowCart((prev) => !prev);
+    dispatch(CartActions?.toggleCart());
   };
 
   const handleNavlinksNavigation = (link) => {
@@ -45,6 +51,7 @@ const Navbar = () => {
           src={icons?.logo}
           className={classes?.brand_logo}
           alt="brand logo"
+          onClick={() => handleNavlinksNavigation("home")}
         />
         <div className={classes?.navlink_wrapper}>
           <div
@@ -63,17 +70,17 @@ const Navbar = () => {
           >
             Shop
           </div>
-          <div className={classes?.navlink}>Product</div>
-          <div className={classes?.navlink}>Contact Us</div>
+          {/* <div className={classes?.navlink}>Product</div>
+          <div className={classes?.navlink}>Contact Us</div> */}
         </div>
         <div className={classes?.navicons_wrapper}>
-          <div className={classes?.navicon}>
+          {/* <div className={classes?.navicon}>
             <img
               src={icons?.searchIcon}
               className={classes?.icon}
               alt="search icon"
             />
-          </div>
+          </div> */}
           <div
             className={classes?.navicon}
             onClick={() => handleNavlinksNavigation("account")}

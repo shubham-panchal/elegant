@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./Home.module.scss";
-import Navbar from "../../components/Navbar/Navbar";
 import HomeCarousel from "../../components/HomeCarousel/HomeCarousel";
 import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
 import { homeSectionImages, icons } from "../../assets/imageKeyMapping";
@@ -8,9 +7,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { VALUES } from "../../constants/app-constant";
-import Footer from "../../components/Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       {/* <Navbar /> */}
@@ -35,7 +35,10 @@ const Home = () => {
             <img src={homeSectionImages?.livingRoomImage} alt="livingroom" />
             <div className={classes?.section_details}>
               <div className={classes?.section_name}>Living Room</div>
-              <div className={classes?.section_cta}>
+              <div
+                className={classes?.section_cta}
+                onClick={() => navigate("/shop")}
+              >
                 Shop Now
                 <img src={icons?.rightArrowIcon} alt="arrow right" />
               </div>
@@ -45,7 +48,10 @@ const Home = () => {
             <img src={homeSectionImages?.bedroomImage} alt="bedroom" />
             <div className={classes?.section_details}>
               <div className={classes?.section_name}> Bedroom</div>
-              <div className={classes?.section_cta}>
+              <div
+                className={classes?.section_cta}
+                onClick={() => navigate("/shop")}
+              >
                 Shop Now
                 <img src={icons?.rightArrowIcon} alt="arrow right" />
               </div>
@@ -55,7 +61,10 @@ const Home = () => {
             <img src={homeSectionImages?.kitchenImage} alt="kitchen" />
             <div className={classes?.section_details}>
               <div className={classes?.section_name}>Kitchen</div>
-              <div className={classes?.section_cta}>
+              <div
+                className={classes?.section_cta}
+                onClick={() => navigate("/shop")}
+              >
                 Shop Now
                 <img src={icons?.rightArrowIcon} alt="arrow right" />
               </div>

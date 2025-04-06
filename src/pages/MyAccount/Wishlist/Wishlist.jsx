@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Wishlist.module.scss";
 import { icons, productImages } from "../../../assets/imageKeyMapping";
 import { useDispatch, useSelector } from "react-redux";
+import { CartActions } from "../../../actions/CartActions";
 
 const Wishlist = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ const Wishlist = () => {
 
   const handleAddToCart = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
+    dispatch(CartActions?.toggleCart());
   };
 
   return (

@@ -18,6 +18,7 @@ const ProductCard = ({ product }) => {
       clearTimeout(addTimeout);
     }, 500);
     dispatch(CartActions?.addToCart(product));
+    dispatch(CartActions?.toggleCart());
   };
 
   const handleWishlist = (product) => {

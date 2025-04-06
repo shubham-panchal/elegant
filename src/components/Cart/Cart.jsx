@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CartActions } from "../../actions/CartActions";
 
 const Cart = ({ onClose }) => {
-  const myCart = useSelector((store) => store?.cart);
+  const myCart = useSelector((store) => store?.cart?.cart);
   const [totalCartValue, setTotalCartValue] = useState(0);
   const dispatch = useDispatch();
 
@@ -15,6 +15,8 @@ const Cart = ({ onClose }) => {
       0
     );
     setTotalCartValue(total);
+
+    if (myCart?.length === 0) dispatch(CartActions?.toggleCart());
   }, [myCart]);
 
   const handleQuantityChange = (type, product) => {
